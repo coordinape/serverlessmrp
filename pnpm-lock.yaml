@@ -26,9 +26,6 @@ dependencies:
   '@vitejs/plugin-react':
     specifier: ^4.2.1
     version: 4.2.1(vite@5.1.6)
-  '@vitejs/plugin-react-refresh':
-    specifier: ^1.3.6
-    version: 1.3.6
   babel-loader:
     specifier: ^9.1.3
     version: 9.1.3(@babel/core@7.24.0)(webpack@5.90.3)
@@ -44,9 +41,6 @@ dependencies:
   react-dom:
     specifier: ^18.2.0
     version: 18.2.0(react@18.2.0)
-  react-refresh:
-    specifier: ^0.14.0
-    version: 0.14.0
   react-router:
     specifier: 6.2.1
     version: 6.2.1(react@18.2.0)
@@ -1755,14 +1749,6 @@ packages:
       magic-string: 0.30.8
     dev: true
 
-  /@rollup/pluginutils@4.2.1:
-    resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
-    engines: {node: '>= 8.0.0'}
-    dependencies:
-      estree-walker: 2.0.2
-      picomatch: 2.3.1
-    dev: false
-
   /@rollup/pluginutils@5.1.0:
     resolution: {integrity: sha512-XTIWOPPcpvyKI6L1NHo0lFlCyznUEyPmPY1mc3KpPVDYulHSTvyeLNVW00QTLIAFNhR3kYnJTQHeGqU4M3n09g==}
     engines: {node: '>=14.0.0'}
@@ -2289,20 +2275,6 @@ packages:
   /@vercel/static-build@1.0.1:
     resolution: {integrity: sha512-6Gbtbdabse+9rvGKjK6G9mmRVw4hIzSTeEXRaGEvW2f2hRD6jAzw3RLMA66R+olaxzsqz404oUL0WgILMd67nQ==}
     dev: true
-
-  /@vitejs/plugin-react-refresh@1.3.6:
-    resolution: {integrity: sha512-iNR/UqhUOmFFxiezt0em9CgmiJBdWR+5jGxB2FihaoJfqGt76kiwaKoVOJVU5NYcDWMdN06LbyN2VIGIoYdsEA==}
-    engines: {node: '>=12.0.0'}
-    deprecated: This package has been deprecated in favor of @vitejs/plugin-react
-    dependencies:
-      '@babel/core': 7.24.0
-      '@babel/plugin-transform-react-jsx-self': 7.23.3(@babel/core@7.24.0)
-      '@babel/plugin-transform-react-jsx-source': 7.23.3(@babel/core@7.24.0)
-      '@rollup/pluginutils': 4.2.1
-      react-refresh: 0.10.0
-    transitivePeerDependencies:
-      - supports-color
-    dev: false
 
   /@vitejs/plugin-react@4.2.1(vite@5.1.6):
     resolution: {integrity: sha512-oojO9IDc4nCUUi8qIR11KoQm0XFFLIwsRBwHRR4d/88IWghn1y6ckz/bJ8GHDCsYEJee8mDzqtJxh15/cisJNQ==}
@@ -5105,11 +5077,6 @@ packages:
   /react-is@18.2.0:
     resolution: {integrity: sha512-xWGDIW6x921xtzPkhiULtthJHoJvBbF3q26fzloPCK0hsvxtPVelvftw3zjbHWSkR2km9Z+4uxbDDK/6Zw9B8w==}
     dev: true
-
-  /react-refresh@0.10.0:
-    resolution: {integrity: sha512-PgidR3wST3dDYKr6b4pJoqQFpPGNKDSCDx4cZoshjXipw3LzO7mG1My2pwEzz2JVkF+inx3xRpDeQLFQGH/hsQ==}
-    engines: {node: '>=0.10.0'}
-    dev: false
 
   /react-refresh@0.14.0:
     resolution: {integrity: sha512-wViHqhAd8OHeLS/IRMJjTSDHF3U9eWi62F/MledQGPdJGDhodXJ9PBLNGr6WWL7qlH12Mt3TyTpbS+hGXMjCzQ==}
