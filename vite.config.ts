@@ -1,6 +1,5 @@
 import { defineConfig } from 'vite';
 import vercel from 'vite-plugin-vercel';
-import tsconfigPaths from 'vite-tsconfig-paths';
 
 export default defineConfig({
   appType: 'spa',
@@ -9,6 +8,5 @@ export default defineConfig({
   },
   plugins: [
     vercel(),
-    tsconfigPaths(),
   ],
 });
