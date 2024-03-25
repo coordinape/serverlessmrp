@@ -12,6 +12,6 @@ export const RenderFrameImage = ({
   // children: React.JSX.Element;
   res: VercelResponse;
 }) => {
-  const ir = new ImageResponse(<div>horse</div>);
-  Readable.fromWeb(ir.body as ReadableStream<any>).pipe(res);
+  // const ir = new ImageResponse(<div>horse</div>);
+  // Readable.fromWeb(ir.body as ReadableStream<any>).pipe(res);
 };

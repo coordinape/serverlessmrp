@@ -4,6 +4,8 @@ import { Path } from 'path-parser';
 
 import { RenderFrameImage } from './FrameImage';
 import { GiveHomeFrame } from './frames/give/GiveHomeFrame';
+import {ImageResponse} from "@vercel/og/dist/index.edge";
+import React from "react";
 
 export const FRAME_ROUTER_URL_BASE = `/api/frames/router`;
 
@@ -47,7 +49,8 @@ const getHandler = (path: string, m: 'GET' | 'POST') => {
     const params = p.test(path);
     if (params) {
       return (req: VercelRequest, res: VercelResponse) => {
-        handler(req, res, params);
+        // handler(req, res, params);
+        res.status(200).send('wut');
       };
     }
   }
