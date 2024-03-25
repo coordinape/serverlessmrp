@@ -6,7 +6,6 @@ import { Path } from 'path-parser';
 import { FramePostInfo, getFramePostInfo } from '../getFramePostInfo';
 
 import { RenderFrameImage } from './FrameImage';
-import { RenderFrameMeta } from './FrameMeta';
 import { GiveGiverFrame } from './frames/give/GiveGiverFrame';
 import { GiveHomeFrame } from './frames/give/GiveHomeFrame';
 
@@ -114,7 +113,7 @@ const addFrame = (frame: Frame) => {
       `/meta/${frame.id}${frame.resourceIdentifier.resourcePathExpression}`,
       'GET',
       (_req, res, params) => {
-        RenderFrameMeta({ frame, res, params });
+        // RenderFrameMeta({ frame, res, params });
       }
     );
   }
@@ -158,7 +157,7 @@ const handleButton = async (
   }
   if (button.onPost) {
     const returnFrame = await button.onPost(info, params);
-    return RenderFrameMeta({ frame: returnFrame, res, params });
+    // return RenderFrameMeta({ frame: returnFrame, res, params });
   }
 };
 
