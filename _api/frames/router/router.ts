@@ -2,11 +2,8 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
 import { Path } from 'path-parser';
 
-// import { webAppURL } from '../../../src/config/webAppURL';
 import { FramePostInfo, getFramePostInfo } from '../getFramePostInfo';
-
 import { RenderFrameImage } from './FrameImage';
-import { GiveGiverFrame } from './frames/give/GiveGiverFrame';
 import { GiveHomeFrame } from './frames/give/GiveHomeFrame';
 
 export const FRAME_ROUTER_URL_BASE = `/api/frames/router`;
@@ -88,10 +85,8 @@ export type ResourceIdentifier = {
 };
 
 export type Frame = {
-  buttons: Button[];
-  imageNode: (params: Record<string, string>) => Promise<React.ReactNode>;
   id: string;
-  homeFrame: boolean;
+  imageNode: (params: Record<string, string>) => Promise<React.ReactNode>;
   resourceIdentifier: ResourceIdentifier;
 };
 
@@ -108,16 +103,6 @@ export type Button = {
 };
 
 const addFrame = (frame: Frame) => {
-  if (frame.homeFrame) {
-    addPath(
-      `/meta/${frame.id}${frame.resourceIdentifier.resourcePathExpression}`,
-      'GET',
-      (_req, res, params) => {
-        // RenderFrameMeta({ frame, res, params });
-      }
-    );
-  }
-
   // always add a post route
   addPath(
     `/post/${frame.id}${frame.resourceIdentifier.resourcePathExpression}`,
@@ -125,8 +110,6 @@ const addFrame = (frame: Frame) => {
     async (req, res, params) => {
       // do things
       // actually parse the post????
-      const info = await getFramePostInfo(req);
-      return await handleButton(frame, params, info, res);
     }
   );
 
@@ -145,21 +128,4 @@ const addFrame = (frame: Frame) => {
   );
 };
 
-const handleButton = async (
-  frame: Frame,
-  params: Record<string, string>,
-  info: FramePostInfo,
-  res: VercelResponse
-) => {
-  const button = frame.buttons[info.message.buttonIndex - 1];
-  if (!button) {
-    return res.send(400).send('invalid button index');
-  }
-  if (button.onPost) {
-    const returnFrame = await button.onPost(info, params);
-    // return RenderFrameMeta({ frame: returnFrame, res, params });
-  }
-};
-
 addFrame(GiveHomeFrame);
-addFrame(GiveGiverFrame);
