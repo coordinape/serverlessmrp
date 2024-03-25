@@ -6,6 +6,8 @@ import { RenderFrameImage } from './FrameImage';
 import { GiveHomeFrame } from './frames/give/GiveHomeFrame';
 import {ImageResponse} from "@vercel/og/dist/index.edge";
 import React from "react";
+import { Readable } from 'node:stream';
+import { ReadableStream } from 'node:stream/web';
 
 export const FRAME_ROUTER_URL_BASE = `/api/frames/router`;
 
@@ -36,7 +38,9 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   }
   const handler = getHandler('/' + ((path as string) ?? ''), req.method);
   if (!handler) {
-    return res.status(404).send(`no handler found for ${path}`);
+    const ir = new ImageResponse(<div>hi</div>);
+    Readable.fromWeb(ir.body as ReadableStream<any>).pipe(res);
+    return //res.status(404).send(`no handler found for ${path}`);
   }
   return handler(req, res);
 }
