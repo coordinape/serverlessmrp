@@ -4,7 +4,7 @@ import { Path } from 'path-parser';
 
 import { RenderFrameImage } from './FrameImage';
 import { GiveHomeFrame } from './frames/give/GiveHomeFrame';
-import {ImageResponse} from "@vercel/og/dist/index.edge";
+import {ImageResponse} from "@vercel/og";
 import React from "react";
 import { Readable } from 'node:stream';
 import { ReadableStream } from 'node:stream/web';
