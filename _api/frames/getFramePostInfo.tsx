@@ -1,8 +1,8 @@
 import { VercelRequest } from '@vercel/node';
 
-import { findOrCreateProfileByFid } from '../../api-lib/neynar/findOrCreateProfileByFid.ts';
+// import { findOrCreateProfileByFid } from '../../api-lib/neynar/findOrCreateProfileByFid.ts';
 
-import { FrameMessage } from './FrameMessage.ts';
+import { FrameMessage } from './FrameMessage';
 
 export async function getFramePostInfo(req: VercelRequest) {
   const {
@@ -16,13 +16,13 @@ export async function getFramePostInfo(req: VercelRequest) {
 
   // TODO: validation here when !LOCAL ? don't just use untrustedData
   const frameMessage: FrameMessage = untrustedData;
-  const profile = await findOrCreateProfileByFid(frameMessage.fid);
+  // const profile = await findOrCreateProfileByFid(frameMessage.fid);
 
   // are we X or Y or rando ?
 
   return {
     message: frameMessage,
-    profile,
+    // profile,
   };
 }
 

@@ -2,7 +2,7 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
 import { Path } from 'path-parser';
 
-import { webAppURL } from '../../../src/config/webAppURL';
+// import { webAppURL } from '../../../src/config/webAppURL';
 import { FramePostInfo, getFramePostInfo } from '../getFramePostInfo';
 
 import { RenderFrameImage } from './FrameImage';
@@ -10,7 +10,7 @@ import { RenderFrameMeta } from './FrameMeta';
 import { GiveGiverFrame } from './frames/give/GiveGiverFrame';
 import { GiveHomeFrame } from './frames/give/GiveHomeFrame';
 
-export const FRAME_ROUTER_URL_BASE = `${webAppURL('colinks')}/api/frames/router`;
+export const FRAME_ROUTER_URL_BASE = `/api/frames/router`;
 
 type PathWithHandler = {
   path: Path;
