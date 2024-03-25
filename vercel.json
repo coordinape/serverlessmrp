@@ -1,0 +1,46 @@
+{
+  "devCommand": "pnpm dev",
+  "rewrites": [
+    {
+      "source": "/api/frames/router/:path*",
+      "destination": "/api/frames/router/router?path=:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000"
+        }
+      ]
+    },
+    {
+      "source": "/api/cosoul/art/(.*)",
+      "headers": [
+        { "key": "Access-Control-Allow-Credentials", "value": "true" },
+        { "key": "Access-Control-Allow-Origin", "value": "*" },
+        { "key": "Access-Control-Allow-Methods", "value": "*" },
+        { "key": "Allow", "value": "*" },
+        {
+          "key": "Access-Control-Allow-Headers",
+          "value": "*"
+        }
+      ]
+    }
+  ],
+  "images": {
+    "sizes": [256, 512, 1024, 2048],
+    "remotePatterns": [],
+    "minimumCacheTTL": 1440,
+    "formats": ["image/webp"],
+    "dangerouslyAllowSVG": false,
+    "contentSecurityPolicy": "default-src 'self'; img-src *;",
+    "contentDispositionType": "inline"
+  }
+}
