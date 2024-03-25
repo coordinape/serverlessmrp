@@ -12,7 +12,9 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const hi = ReactDOM.renderToString("yo");
     console.log(hi);
-    
+
+    return (<div>moo</div>);
+
     const s = <div>hi</div>;
 
     // just having this code breaks everything
