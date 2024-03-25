@@ -2,7 +2,6 @@
 import { VercelRequest, VercelResponse } from '@vercel/node';
 import { Path } from 'path-parser';
 
-import { FramePostInfo, getFramePostInfo } from '../getFramePostInfo';
 import { RenderFrameImage } from './FrameImage';
 import { GiveHomeFrame } from './frames/give/GiveHomeFrame';
 
@@ -95,11 +94,6 @@ export type Button = {
   action: 'post' | 'link';
   // only use target for external links
   target?: string;
-  // only use onPost for post
-  onPost?: (
-    info: FramePostInfo,
-    params: Record<string, string>
-  ) => Promise<Frame>;
 };
 
 const addFrame = (frame: Frame) => {

@@ -1,13 +1,10 @@
 import React from 'react';
 
-import { FramePostInfo } from '../../../getFramePostInfo';
 import { Frame } from '../../router';
 
 import {
-  getGiveFromParams,
   giveResourceIdentifier,
 } from './getGiveFromParams';
-import { GiveGiverFrame } from './GiveGiverFrame';
 
 const homeFrameImageNode = async (params: Record<string, string>) => {
   return (
@@ -31,13 +28,6 @@ const homeFrameImageNode = async (params: Record<string, string>) => {
 
 export const GiveHomeFrame: Frame = {
   id: 'give',
-  homeFrame: true,
   resourceIdentifier: giveResourceIdentifier,
   imageNode: homeFrameImageNode,
-  buttons: [
-    {
-      title: 'Enter the Arena',
-      action: 'post',
-    },
-  ],
 };
