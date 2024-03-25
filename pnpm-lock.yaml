@@ -30,8 +30,8 @@ dependencies:
     specifier: ^5.0.11
     version: 5.1.6
   vite-plugin-vercel:
-    specifier: ^5.0.1
-    version: 5.0.1(vite@5.1.6)
+    specifier: ^5.0.3
+    version: 5.0.3(vite@5.1.6)
 
 devDependencies:
   '@types/react':
@@ -3273,10 +3273,10 @@ packages:
       - supports-color
     dev: true
 
-  /vite-plugin-vercel@5.0.1(vite@5.1.6):
-    resolution: {integrity: sha512-mgzWuuqVbM2sTvsHntqfU22RENnJb6y7woyW2fE0oWyuvuV9WPlskStcHU7VksgYLoNVQzPP4bn2+/qbayWyoA==}
+  /vite-plugin-vercel@5.0.3(vite@5.1.6):
+    resolution: {integrity: sha512-gqLAKTDaBpBGrM1Z0nTrfFu3zAwrZcV9JqZ9GPZUjD29kdoFq7V0x4P9dJ5yD4wMcgzQJ+cxAknUdrpECYWYLg==}
     peerDependencies:
-      '@vite-plugin-vercel/vike': 5.0.1
+      '@vite-plugin-vercel/vike': 5.0.2
       vike: '*'
       vite: ^4.4 || ^5.0.2
     peerDependenciesMeta:
