@@ -50,7 +50,7 @@ const getHandler = (path: string, m: 'GET' | 'POST') => {
     if (params) {
       return (req: VercelRequest, res: VercelResponse) => {
         // handler(req, res, params);
-        res.status(200).send('wut');
+        return res.status(200).send('wut');
       };
     }
   }
