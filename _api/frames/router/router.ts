@@ -78,15 +78,9 @@ const addPath = (
 // - onPost -> Does Things, and redirects/returns a Frame???
 // - externalLink
 
-export type ResourceIdentifier = {
-  resourcePathExpression: string;
-  getResourceId: (params: Record<string, string>) => string;
-};
-
 export type Frame = {
   id: string;
   imageNode: (params: Record<string, string>) => Promise<React.ReactNode>;
-  resourceIdentifier: ResourceIdentifier;
 };
 
 export type Button = {
@@ -99,7 +93,7 @@ export type Button = {
 const addFrame = (frame: Frame) => {
   // always add a post route
   addPath(
-    `/post/${frame.id}${frame.resourceIdentifier.resourcePathExpression}`,
+    `/post/${frame.id}/:giveId`,
     'POST',
     async (req, res, params) => {
       // do things
@@ -110,7 +104,7 @@ const addFrame = (frame: Frame) => {
   // always add an image route
   // @ts-ignore
   addPath(
-    `/img/${frame.id}${frame.resourceIdentifier.resourcePathExpression}`,
+    `/img/${frame.id}/:giveId`,
     'GET',
     // eslint-disable-next-line @typescript-eslint/no-unused-vars
     async (_req, res /*, params*/) => {

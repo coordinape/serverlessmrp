@@ -28,6 +28,5 @@ const homeFrameImageNode = async (params: Record<string, string>) => {
 
 export const GiveHomeFrame: Frame = {
   id: 'give',
-  resourceIdentifier: giveResourceIdentifier,
   imageNode: homeFrameImageNode,
 };
