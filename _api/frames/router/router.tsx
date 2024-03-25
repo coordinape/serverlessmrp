@@ -38,8 +38,7 @@ export default async function (req: VercelRequest, res: VercelResponse) {
   }
   const handler = getHandler('/' + ((path as string) ?? ''), req.method);
   if (!handler) {
-    const ir = new ImageResponse(<div>hi</div>);
-    Readable.fromWeb(ir.body as ReadableStream<any>).pipe(res);
+    RenderFrameImage({res});
     return //res.status(404).send(`no handler found for ${path}`);
   }
   return handler(req, res);
